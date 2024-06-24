@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="card">
+            <h5 class="card-header">Darslar</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Dars nomi</th>
+                    <th>Dars soni</th>
+                    <th>Dars haqida</th>
+                    <th>Dars kategory</th>
+                    <th>Dars ost-kategory</th>
+                    <th>Tahrirlash</th>
+                  </tr>
+                </thead>
+                {% if resluts == None %}
+                <tbody class="table-border-bottom-0">
+                  {% for Product in Products %}
+                  <tr>
+                    <td> {{Product.id}} </td>
+                    <td>{{Product.lesson_name}}</td>
+                    <td>
+                        {{Product.lesson_number}}-dars                        
+                    </td>
+                    <td>
+                        {{Product.description}}
+                      </td>
+                      <td>
+                        {{Product.category_name}}
+                      </td>
+                      <td>
+                        {{Product.subcategory_name}}
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url "Update" Product.id %}"
+                          ><i class="bx bx-edit-alt me-1"></i> Yangilash</a
+                          >
+                          <a class="dropdown-item" href="{% url "delete" Product.id %}"
+                          ><i class="bx bx-trash me-1"></i> O'chirish</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                  {% for Product in results %}
+                  <tr>
+                    <td> {{Product.id}} </td>
+                    <td>{{Product.lesson_name}}</td>
+                    <td>
+                        {{Product.lesson_number}}-dars                        
+                    </td>
+                    <td>
+                        {{Product.description}}
+                      </td>
+                      <td>
+                        {{Product.category_name}}
+                      </td>
+                      <td>
+                        {{Product.subcategory_name}}
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url "Update" Product.id %}"
+                          ><i class="bx bx-edit-alt me-1"></i> Yangilash</a
+                          >
+                          <a class="dropdown-item" href="{% url "delete" Product.id %}"
+                          ><i class="bx bx-trash me-1"></i> O'chirish</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+              {% empty %}
+                  <tr>
+                    <td>
+                      <li>No results found.</li>
+                    </td>
+                  </tr>
+              {% endfor %}
+                </tbody>
+
+                {% endif %}
+              </table>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endblock content %}
+

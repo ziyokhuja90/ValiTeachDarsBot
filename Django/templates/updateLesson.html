@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper d-flex align-items-center ">
+    <div class="card-header w-75 p-3 m-3 bg-white rounded">
+        <h1>Dars qo'shish</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-outline-primary" type="submit" value="Yangilash" >
+</form>
+</div>
+</div>
+{% endblock content %}
+
