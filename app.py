@@ -11,17 +11,9 @@ async def on_startup(dispatcher):
     await set_default_commands(dispatcher)
 
     try:
-        # db.delete_table_lesson()
-        # db.create_table_lesson()
-        # db.delete_Subcategory_lesson()
         print("Bot ishga tushdi")
-        # db.create_table_category()
-        # db.delete_Category_lesson()
-        # db.create_table_subcategory()
-        # db.create_table_users()
     except Exception as err:
         print(err)
-        # print("sssssss")
         
 
 
@@ -32,3 +24,4 @@ async def on_startup(dispatcher):
 
 if __name__ == '__main__':
     executor.start_polling(dp, on_startup=on_startup)
+
