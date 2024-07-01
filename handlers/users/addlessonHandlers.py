@@ -16,13 +16,13 @@ from keyboards.default.simpleKeyboards import StartLesson
 
 
 
-@dp.message_handler(commands=["addLesson"] , is_admin=True)
-async def AddLesson(message : Message , state : FSMContext):
+# @dp.message_handler(commands=["addLesson"] , is_admin=True)
+# async def AddLesson(message : Message , state : FSMContext):
 
-    await Add_Lesson_State.videoId.set()
-    await message.answer("Assalomu alayekum yangi dars videosini tashlang")
+#     await Add_Lesson_State.videoId.set()
+#     await message.answer("Assalomu alayekum yangi dars videosini tashlang")
 
-@dp.message_handler(content_types=types.ContentTypes.VIDEO , state=Add_Lesson_State.videoId)
+@dp.message_handler(content_types=types.ContentTypes.VIDEO)
 async def AddLessonNumberOfLesson(message:Message ,state : FSMContext):
     video_file_id = message.video.file_id
 

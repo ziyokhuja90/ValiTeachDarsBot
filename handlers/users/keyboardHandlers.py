@@ -17,7 +17,7 @@ from keyboards.default.simpleKeyboards import StartLesson ,  dasturlashKeyboard 
 @dp.message_handler(Text(contains="bog'lanish") , state="*")
 async def MainMenuHandler(message: types.Message , state: FSMContext):
     # await state.finish()
-    await message.answer("Biz bilan bog'lanish uchun ushbu qo'ng'iroqlarga murojat qilishingiz mumkin \n+998945515701 \n+998910585717")
+    await message.answer("Biz bilan bog'lanish uchun ushbu qo'ng'iroqlarga qo'ng'iroq qilishingiz mumkin \n+998945515701 \n+998910585717")
 
 @dp.message_handler(Text(contains="Bot haqida") , state="*")
 async def MainMenuHandler(message: types.Message , state: FSMContext):
